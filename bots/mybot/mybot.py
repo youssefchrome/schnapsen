@@ -2,7 +2,7 @@
 RandomBot -- A simple strategy: enumerates all legal moves, and picks one
 uniformly at random.
 """
-
+# test
 # Import the API objects
 from api import State
 from api import Deck
