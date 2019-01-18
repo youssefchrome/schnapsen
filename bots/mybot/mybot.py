@@ -62,4 +62,3 @@ class Bot:
 				chosen_move = move
 
 		return chosen_move
-	#test
