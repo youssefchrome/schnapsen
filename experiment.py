@@ -36,10 +36,13 @@ class Bot:
         if random.random() < self.__non_trump_move:
 
             # IMPLEMENT: Make the best non-trump move you can. Use the best_non_trump_card method written below.
-            pass
+            return str(best_non_trump_card(state))
 
         #IMPLEMENT: Make a random move (but exclude the best non-trump move from above)
-        pass
+        (move1, move2) = best_non_trump_card(state)
+        while (move1, move2) == best_non_trump_card(state):
+            (move1, move2) = random.choice(state.moves())
+        return str((move1, move2))
 
 
 def empty(n):
