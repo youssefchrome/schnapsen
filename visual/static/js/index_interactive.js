@@ -1,6 +1,6 @@
 // TODO
 
-// Implement one-hot encoding in ml-rdeep.py
+// Implement one-hot encoding in mlrdeep.py
 
 // Edge case of two possible marriages at the same time, can use getMoveTypes but need to change move format.
 

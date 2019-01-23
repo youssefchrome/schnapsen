@@ -83,6 +83,6 @@ for str in target:
 print('instances per class: {}'.format(count))
 
 # Store the model in the ml directory
-joblib.dump(model, './bots/ml-rdeep/model.pkl')
+joblib.dump(model, './bots/mlrdeep/model.pkl')
 
 print('Done')

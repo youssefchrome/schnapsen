@@ -16,7 +16,7 @@ from sklearn.externals import joblib
 # from bots.rand import rand
 # from bots.rdeep import rdeep
 # from bots.bully import bully
-from bots.ml-rdeep import ml-rdeep
+from bots.mlrdeep import mlrdeep
 
 from bots.ml.ml import features
 
@@ -30,7 +30,7 @@ PHASE = 1
 # player = rand.Bot()
 # player = rdeep.Bot()
 # player = bully.Bot()
-player = ml-rdeep.Bot()
+player = mlrdeep.Bot()
 
 data = []
 target = []
@@ -87,6 +87,6 @@ for str in target:
 print('instances per class: {}'.format(count))
 
 # Store the model in the ml directory
-joblib.dump(model, './bots/ml-ml-rdeep/model.pkl')
+joblib.dump(model, './bots/mlmlrdeep/model.pkl')
 
 print('Done')
