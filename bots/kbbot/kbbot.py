@@ -10,8 +10,8 @@ from load.py.
 
 from api import State, util
 import random
-from . import load
-from .kb import KB, Boolean, Integer
+from bots.kbbot import load
+from bots.kbbot.kb import KB, Boolean, Integer
 
 class Bot:
 
@@ -60,7 +60,7 @@ class Bot:
         # Here we use "pj" to indicate that the card with index "index" should be played with the
         # PlayJack heuristics that was defined in class. Initialise a different variable if 
         # you want to apply a different strategy (that you will have to define in load.py)
-        variable_string = "pj" + str(index)
+        variable_string = "PC" + str(index)
         strategy_variable = Boolean(variable_string)
 
         # Add the relevant clause to the loaded knowledge base
