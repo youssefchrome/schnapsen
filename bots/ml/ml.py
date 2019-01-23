@@ -123,19 +123,19 @@ def features(state):
 
     # Add phase to feature set
     phase = state.get_phase()
-#    feature_set.append(phase)
+    feature_set.append(phase)
     # Add stock size to feature set
     stock_size = state.get_stock_size()
-#    feature_set.append(stock_size)
+    feature_set.append(stock_size)
     # Add leader to feature set
     leader = state.leader()
-#    feature_set.append(leader)
+    feature_set.append(leader)
     # Add whose turn it is to feature set
     whose_turn = state.whose_turn()
-#    feature_set.append(whose_turn)
+    feature_set.append(whose_turn)
     # Add opponent's played card to feature set
     opponents_played_card = state.get_opponents_played_card()
-#    feature_set.append(opponents_played_card)
+#    feature_set.append(opponents_played_card) # Causes NaN error
 
     ################## You do not need to do anything below this line ########################
 
