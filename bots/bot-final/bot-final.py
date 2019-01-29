@@ -9,11 +9,11 @@ from api import Deck
 
 
 class Bot:
+    def __init__(self,rank,suit):
+        self.rank = Deck.get_rank(rank)
+        self.suit = Deck.get_suit(suit)
 
-	def __init__(self,):
-		pass
-
-	def get_move(self, state):
+    def get_move(self, state):
 		# type: (State) -> tuple[int, int]
 		"""
 		Function that gets called every turn. This is where to implement the strategies.
@@ -29,13 +29,11 @@ class Bot:
 		# All legal moves
 		moves = state.moves()
 		chosen_move = moves[0]
-
 		moves_trump_suit = []
-
 		#Get all trump suit moves available
 		for index, move in enumerate(moves):
 
-			if move[0] is not None and Deck.get_suit(move[0]) == state.get_trump_suit():
+		if move[0] is not None and Deck.get_suit(move[0]) == state.get_trump_suit():
 				moves_trump_suit.append(move)
 
 		if len(moves_trump_suit) > 0:
@@ -61,5 +59,14 @@ class Bot:
 			if move[0] is not None and move[0] % 5 <= chosen_move[0] % 5:
 				chosen_move = move
 
-		return chosen_move
+                return chosen_move
+
+    def show(self,rank):
+        if self.rank == 2 or 7 or 12 or 17:
+            rank = 'K'
+            pass
+        elif self.rank == 3 or 8 or 13 or 18:
+            rank = 'Q'
+            pass
+        print(rank, self.suit)
 
