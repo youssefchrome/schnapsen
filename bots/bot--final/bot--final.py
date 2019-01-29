@@ -10,9 +10,8 @@ from api import Deck
 
 class Bot:
 
-    def __init__(self, rank, suit):
-        self.rank = Deck.get_rank(rank)
-        self.suit = Deck.get_suit(suit)
+	def __init__(self):
+		pass
 
 	def get_move(self, state):
 		# type: (State) -> tuple[int, int]
@@ -32,12 +31,18 @@ class Bot:
 		chosen_move = moves[0]
 
 		moves_trump_suit = []
+		rankQ = [2, 7, 12, 17]
+		rankK = [3, 8, 13, 18]
 
 		#Get all trump suit moves available
 		for index, move in enumerate(moves):
-
-			if move[0] is not None and Deck.get_suit(move[0]) == state.get_trump_suit():
+			if move[0] is not None and Deck.get_suit(move[0]) == state.get_trump_suit() and move[0] not in rankQ and move[0] not in rankK:
 				moves_trump_suit.append(move)
+
+			#If marriage available, play marriage
+			if move[0] is not None and move[1] is not None and Deck.get_suit(move[0]) == Deck.get_suit(move[1]):
+				chosen_move = move
+				return chosen_move
 
 		if len(moves_trump_suit) > 0:
 			chosen_move = moves_trump_suit[0]
@@ -64,12 +69,12 @@ class Bot:
 
 		return chosen_move
 
-
-    def shw(self, rank):
-        if self.rank == 2 or 7 or 12 or 17:
-            rank = 'K'
-            pass
-        elif self.rank == 3 or 8 or 13 or 18:
-            rank = 'Q'
-            pass
-        print(rank, self.suit)
+	#def show(self):
+	#
+	#	if self.rank == 2 or 7 or 12 or 17:
+	#		rank = 'K'
+	#		pass
+	#	elif self.rank == 3 or 8 or 13 or 18:
+	#		rank = 'Q'
+	#		pass
+	#	print(rank, self.suit)
