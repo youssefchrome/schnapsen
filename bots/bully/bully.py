@@ -10,7 +10,7 @@ from api import Deck
 
 class Bot:
 
-	def __init__(self,):
+	def __init__(self):
 		pass
 
 	def get_move(self, state):
