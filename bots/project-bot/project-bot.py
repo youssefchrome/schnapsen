@@ -42,13 +42,10 @@ class Bot:
 			chosen_move = moves_trump_suit[0]
 			return chosen_move
 
-		# If the opponent has played a card
-		if state.get_opponents_played_card() is not None:
-
-
-		# Get move with highest rank available, of any suit
+		# If the opponent has played a card, get highest rank available of any suit
 		for index, move in enumerate(moves):
 			if move[0] is not None and move[0] % 5 <= chosen_move[0] % 5:
 				chosen_move = move
 
 		return chosen_move
+
